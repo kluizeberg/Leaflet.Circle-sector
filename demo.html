@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Demo Leaflet.Circle-sector</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.2/leaflet.css">
+		<style>
+body {
+	margin: 0;
+	padding: 0;
+	position: absolute; top: 0; bottom: 0; width: 100%;
+}
+</style>
+	</head>
+	<body><!-- map container -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.2/leaflet.js"></script>
+		<script src="leaflet.circle-sector.js"></script>
+		<script>
+var map = L.map(document.body, {
+	center: [50, 5], // Ardennes, BE
+//	zoom: 5, // fitBounds
+	layers: L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		maxZoom: 19,
+		attribution: '<a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
+	})
+});
+
+var sector = L.circle([50.84432, 1.60002], {
+	color: 'red',
+	radius: 55700,
+	weight: 1
+})
+	.setSector(-30, 120) // direction, centralAngle
+	.bindPopup('Target zone of Turm I, Batterie Todt (1942-44)')
+	.addTo(map);
+
+map.fitBounds(sector.getBounds().pad(0.1));
+</script>
+	</body>
+</html>
