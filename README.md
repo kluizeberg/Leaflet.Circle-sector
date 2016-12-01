@@ -57,7 +57,9 @@ Pragmatic assumption: `startAngle <= endAngle`. When `endAngle - startAngle >= 3
 
 ### [`L.CRS.Earth`](http://leafletjs.com/reference-1.0.2.html#crs-l-crs-earth) *additions*
 
+**Note**: these methods require true `LatLng`s.
+
 | Function | Returns | Description |
 | :------- | :------ | :---------- |
-| `bearing(<LatLng> latLng1, <LatLng> latLng2)` | `Number` | Returns initial bearing (degrees normalized to 0-360) on great circle path from point 1 to point 2. |
-| `destination(<LatLng> origin, <Number> bearing, <Number> distance)` | `LatLng` | Returns destination point given distance (meters) and bearing (degrees) from origin. |
+| `bearing(<LatLng> latLng1, <LatLng> latLng2)` | `Number` | Returns initial bearing (degrees normalized to 0-360) on great circle path from latLng1 to latLng2. |
+| `destination(<LatLng> latLng, <Number> bearing, <Number> distance)` | `LatLng` | Returns destination point given distance (meters) and bearing (degrees) from latLng. |
