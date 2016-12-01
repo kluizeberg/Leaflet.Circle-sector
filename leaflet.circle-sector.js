@@ -183,7 +183,7 @@
 
 	/* CRS helper methods */
 
-	L.CRS.Earth.bearing = function (latLng1, latLng2) {
+	L.CRS.Earth.bearing = function (latLng1, latLng2) { // true LatLng's
 		// http://www.movable-type.co.uk/scripts/latlong.html#bearing
 		var lat1 = latLng1.lat * DEG_TO_RAD,
 		    lng1 = latLng1.lng * DEG_TO_RAD,
@@ -195,11 +195,11 @@
 		return ((Math.atan2(y, x) / DEG_TO_RAD) + 360) % 360; // normalized to 0-360
 	};
 
-	L.CRS.Earth.destination = function (origin, bearing, distance) {
+	L.CRS.Earth.destination = function (latLng, bearing, distance) { // true LatLng
 		// http://www.movable-type.co.uk/scripts/latlong.html#destPoint
 		bearing  = bearing    * DEG_TO_RAD;
-		var lat1 = origin.lat * DEG_TO_RAD,
-		    lng1 = origin.lng * DEG_TO_RAD,
+		var lat1 = latLng.lat * DEG_TO_RAD,
+		    lng1 = latLng.lng * DEG_TO_RAD,
 		    sin_lat1 = Math.sin(lat1),
 		    cos_lat1 = Math.cos(lat1),
 		    dR = distance / this.R,
