@@ -13,7 +13,7 @@
 
 	// rotate point [x + r, y + r] around [x, y] by <angle> radians
 	function rotate(p, angle, r) {
-		return p.add(L.point(Math.cos(angle), Math.sin(angle)).multiplyBy(r));
+		return p.add(new L.Point(Math.cos(angle), Math.sin(angle)).multiplyBy(r));
 	}
 
 	L.Circle.mergeOptions({
@@ -36,7 +36,7 @@
 			    e = this.options.endAngle,
 			    r = this._mRadius,
 			    earth = L.CRS.Earth,
-			    bounds = L.latLngBounds([c]);
+			    bounds = new L.LatLngBounds([c]);
 
 			[s, -270, -180, -90, 0, 90, 180, 270, e].forEach(function (bearing) {
 				if (s <= bearing && bearing <= e) {
@@ -208,7 +208,7 @@
 		    lat2 = Math.asin(sin_lat1 * cos_dR + cos_lat1 * sin_dR * Math.cos(bearing)),
 		    lng2 = lng1 + Math.atan2(Math.sin(bearing) * sin_dR * cos_lat1, cos_dR - sin_lat1 * Math.sin(lat2));
 
-		return L.latLng(lat2 / DEG_TO_RAD,
+		return new L.LatLng(lat2 / DEG_TO_RAD,
 			((lng2 / DEG_TO_RAD) + 540) % 360 - 180); // normalized to -180 - 180
 	};
 })();
