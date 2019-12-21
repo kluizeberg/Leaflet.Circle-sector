@@ -1,10 +1,10 @@
 # Leaflet.Circle-sector
 
-Plugin for [Leaflet](http://leafletjs.com) adding sector (pie-shaped part of a circle) drawing capability to [`L.Circle`](http://leafletjs.com/reference-1.0.2.html#circle).
+Plugin for [Leaflet](https://leafletjs.com) adding sector (pie-shaped part of a circle) drawing capability to [`L.Circle`](https://leafletjs.com/reference#circle).
 
 Based on [jieter / Leaflet-semicircle](https://github.com/jieter/Leaflet-semicircle).
 
-Compatible with Leaflet version 1.0 (tested with 1.0.2), **not** compatible with version 0.x.
+Compatible with Leaflet version 1.0 (tested with 1.0.2, 1.6.0), **not** compatible with version 0.x.
 
 See [demo](https://kluizeberg.github.io/Leaflet.Circle-sector/demo.html).
 
@@ -39,7 +39,7 @@ This plugin alters Leaflet's class `L.Circle` and adds helper methods to class `
 
 Angles are in degrees, clockwise from North.
 
-### [`L.Circle`](http://leafletjs.com/reference-1.0.2.html#circle) *additions*
+### [`L.Circle`](https://leafletjs.com/reference.html#circle) *additions*
 
 | Option | Type | Default | Description |
 | :----- | :--- | :------ | :---------- |
@@ -55,7 +55,7 @@ Pragmatic assumption: `startAngle <= endAngle`. When `endAngle - startAngle >= 3
 | `setAngles(<Number> start, <Number> end)` | `this` | Sets the start and end angles of a circle (sector), non-numeric values are ignored. |
 | `setSector(<Number> direction, <Number> centralAngle?)` | `this` | Alternative angle setter through main direction and central angle; previously set central angle is retained if omitted. |
 
-### [`L.CRS.Earth`](http://leafletjs.com/reference-1.0.2.html#crs-l-crs-earth) *additions*
+### [`L.CRS.Earth`](https://leafletjs.com/reference.html#crs-l-crs-earth) *additions*
 
 **Note**: these methods require true `LatLng`s.
 

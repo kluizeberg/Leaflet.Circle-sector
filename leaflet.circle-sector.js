@@ -13,7 +13,7 @@
 
 	// rotate point [x + r, y + r] around [x, y] by <angle> radians
 	function rotate(p, angle, r) {
-		return p.add(new L.Point(Math.cos(angle), Math.sin(angle)).multiplyBy(r));
+		return p.add(new L.Point(Math.cos(angle), Math.sin(angle))._multiplyBy(r));
 	}
 
 	L.Circle.mergeOptions({
